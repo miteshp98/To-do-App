@@ -1,0 +1,47 @@
+body.dark-theme {
+  background: var(--VeryDarkBlue);
+  color: var(--DarkDarkGrayishBlue);
+}
+
+.todo-section.dark-theme {
+  background: url("images/bg-desktop-dark.jpg") no-repeat;
+  background-size: cover;
+}
+
+.task-input.dark-theme {
+  background-color: var(--VeryDarkDesaturatedBlue);
+  color: var(--LightGrayishBlue);
+}
+
+.to-do-list-container.dark-theme {
+  background-color: var(--VeryDarkDesaturatedBlue);
+}
+
+.task-name.dark-theme {
+  color: var(--LightGrayishBlue);
+}
+
+.completed-task.dark-theme {
+  color: var(--VeryDarkGrayishBlue);
+  text-decoration: line-through;
+}
+
+.completed-task .task-name.dark-theme {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.switch-theme.dark-theme {
+  background: url("images/icon-sun.svg") no-repeat;
+  background-size: 60%;
+}
+
+.task-status.dark-theme {
+  background-color: var(--VeryDarkDesaturatedBlue);
+}
+
+@media screen and (max-width: 700px) {
+  .todo-section.dark-theme {
+    background: url("images/bg-mobile-dark.jpg") no-repeat;
+    background-size: cover;
+  }
+}

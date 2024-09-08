@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+:root {
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  --BrightBlue: hsl(220, 98%, 61%);
+
+  /* Dark Theme */
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBluehover: hsl(236, 33%, 92%);
+  --DarkDarkGrayishBlue: hsl(234, 11%, 52%);
+}
+
+body {
+  background: var(--VeryLightGray);
+  color: var(--DarkGrayishBlue);
+}
+
+.todo-section {
+  width: 100%;
+  padding: 8rem 0;
+  background: url("images/bg-desktop-light.jpg") no-repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.top-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  color: var(--VeryLightGray);
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.switch-theme {
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: url("images/icon-moon.svg") no-repeat;
+  background-position: center center;
+  background-size: 60%;
+  transition: all 1s ease-in-out;
+}
+
+form {
+  margin-block: 30px 0;
+  width: 100%;
+  position: relative;
+}
+
+.add-task {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid var(--LightGrayishBlue);
+  background: transparent;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 111;
+  cursor: pointer;
+}
+
+.add-task:hover {
+  border-color: var(--BrightBlue);
+}
+
+.task-input {
+  background-color: var(--VeryLightGray);
+  width: 100%;
+  height: 60px;
+  padding-inline: 60px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.task-input::placeholder {
+  color: var(--DarkGrayishBlue);
+}
+
+.to-do-list-container {
+  position: relative;
+  height: 100%;
+  top: -100px;
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  background-color: var(--VeryLightGray);
+}
+
+.to-do-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  padding-inline: 25px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.076);
+  transition: all 0.2s ease-in-out;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+}
+
+.check-button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--LightGrayishBlue);
+  cursor: pointer;
+  background-position: center center;
+  transition: all 0.5s ease-in-out;
+}
+
+.check-button:hover {
+  border: 1px solid var(--BrightBlue);
+}
+
+.check-btn-bg {
+  background: url("images/icon-check.svg") no-repeat,
+    linear-gradient(
+      360deg,
+      hsla(192, 100%, 67%, 1) 0%,
+      hsla(280, 87%, 65%, 1) 100%
+    );
+  background-position: center center;
+}
+
+.task-name {
+  flex-grow: 1;
+  font-size: 1.05em;
+  font-weight: 500;
+  color: var(--VeryDarkGrayishBlue);
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-task {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.to-do-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  padding-inline: 20px;
+}
+
+.task-count {
+  font-size: 0.9em;
+  color: var(--DarkGrayishBlue);
+}
+
+.task-status {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.task-status > button,
+.clear-completed-btn {
+  background: none;
+  border: none;
+  color: var(--DarkGrayishBlue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.all-task-btn,
+.active-task-btn,
+.completed-task-btn {
+  font-size: 1em;
+}
+
+.all-task-btn:hover,
+.active-task-btn:hover,
+.completed-task-btn:hover,
+.clear-completed-btn:hover {
+  color: var(--VeryDarkBlue);
+}
+
+.active-tab {
+  color: var(--BrightBlue) !important;
+}
+
+.hide {
+  display: none;
+}
+
+.completed-task {
+  color: var(--LightGrayishBlue);
+  text-decoration: line-through;
+}
+
+.completed-task .task-name {
+  color: var(--LightGrayishBlue);
+}
+
+.list-item.dragging :where(.list-item, p, button) {
+  filter: blur(1px);
+}
+
+@media screen and (max-width: 700px) {
+  .todo-section {
+    background: url("images/bg-mobile-light.jpg") no-repeat;
+    background-size: cover;
+  }
+  .container {
+    width: 93%;
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 2.3em;
+  }
+  .task-input {
+    padding-inline: 70px;
+    font-size: 1em;
+  }
+  .task-name {
+    font-size: 0.95em;
+  }
+  .task-status {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    height: 40px;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.192);
+    background-color: var(--VeryLightGray);
+  }
+}
